@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\WithdrawalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\BalanceController;
 use App\Http\Controllers\Api\TransactionController;
@@ -11,4 +12,4 @@ Route::get('/transactions/{user}', [TransactionController::class, 'index'])->nam
 
 // Маршруты для операций (будем добавлять позже)
 Route::post('/webhook/deposit', [WebhookController::class, 'deposit'])->name('webhook.deposit');
-// Route::post('/withdrawals', [WithdrawalController::class, 'store']);
+Route::post('/withdrawals', [WithdrawalController::class, 'store'])->name('withdrawals.store');
